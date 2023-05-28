@@ -21,7 +21,7 @@ export default function Roompix() {
 
   const fetchData = () => {
     axios
-      .get('http://localhost/capstone/index.php')
+      .get('http://localhost/capstone/rooms.php')
       .then((response) => {
         setCarouselItems(response.data);
       })

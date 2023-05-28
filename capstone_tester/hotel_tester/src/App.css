@@ -282,10 +282,55 @@
  
   border-radius: 20px !important;
   height: 500px !important;
-  width: 50%;
+  width: 40% !important;
 
   animation: coolSlide 3s ease-in-out ;
 }
+.form2{
+
+  border-radius: 20px !important;
+  height: 500px !important;
+  width: 40% !important;
+  margin-left: 475px;
+  transform: translateY(-105%);
+
+  animation: coolSlide2 3s ease-in-out ;
+}
+.form3{
+
+  border-radius: 20px !important;
+  height: 500px !important;
+  width: 40% !important;
+  margin-left: 950px;
+  transform: translateY(-210%);
+
+  animation: coolSlide3 3s ease-in-out ;
+}
+
+@keyframes coolSlide3 {
+  from {
+    transform: translateX(-30%) translateY(-210%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%) translateY(-210%);
+    opacity: 1;
+  }
+}
+
+
+@keyframes coolSlide2 {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-105%);
+    opacity: 1;
+  }
+}
+
+
 
 @keyframes coolSlide {
   from {
@@ -340,7 +385,7 @@
 
 .formbody {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  width: 500px!important;
+  width: 400px!important;
 }
 .adminhead1{
   height: 100px;

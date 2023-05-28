@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Card, Form, Button, Alert } from 'react-bootstrap';
-import RoomDeluxxe from './settingsaddroomdeluxe';
-import Premiere from './settingsaddroomspremiere';
 
-const Settings = ({ onSuccess }) => {
+const RoomDeluxxe = ({ onSuccess }) => {
   const [roomNumber, setRoomNumber] = useState('');
   const [roomPrice, setRoomPrice] = useState('');
   const [roomAmmen, setRoomAmmen] = useState('');
@@ -15,7 +13,7 @@ const Settings = ({ onSuccess }) => {
     event.preventDefault();
 
     axios
-      .post('http://localhost/capstone/addRooms.php', {
+      .post('http://localhost/capstone/addRoomsdeluxxe.php', {
         room_number: roomNumber,
         room_price: roomPrice,
         room_ammen: roomAmmen,
@@ -37,10 +35,9 @@ const Settings = ({ onSuccess }) => {
   };
 
   return (
-    <div>
-    <Card className="my-4 form text-start formbody">
+    <Card className="my-4 form2 text-start formbody">
       <Card.Body>
-        <Card.Title>Economy</Card.Title>
+        <Card.Title>DeLuxxe</Card.Title>
         {showSuccessMessage && (
           <Alert variant="success" onClose={() => setShowSuccessMessage(false)} dismissible>
             Room Added
@@ -93,12 +90,7 @@ const Settings = ({ onSuccess }) => {
         </Form>
       </Card.Body>
     </Card>
-
-    <RoomDeluxxe/>
-    <Premiere/>
-    </div>
-
   );
 };
 
-export default Settings;
+export default RoomDeluxxe;

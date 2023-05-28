@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const handleModalSubmit = async () => {
     try {
-      const response = await axios.get('http://localhost/capstone/index3.php', {
+      const response = await axios.get('http://localhost/capstone/adminAccount.php', {
         params: {
           name: username,
           password: password,
