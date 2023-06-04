@@ -66,9 +66,9 @@ const Bookings = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response1 = await axios.get('http://localhost/capstone/rooms.php');
-        const response2 = await axios.get('http://localhost/capstone/roomspremiere.php');
-        const response3 = await axios.get('http://localhost/capstone/roomsdeluxxe.php');
+        const response1 = await axios.get('https://tester001.herokuapp.com/rooms.php');
+        const response2 = await axios.get('https://tester001.herokuapp.com/roomspremiere.php');
+        const response3 = await axios.get('https://tester001.herokuapp.com/roomsdeluxxe.php');
 
         const combinedData = [...response1.data, ...response2.data, ...response3.data];
         setData(combinedData);

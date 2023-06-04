@@ -12,7 +12,7 @@ const Form2 = ({ onSuccess }) => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    axios.post('http://localhost/capstone/add2.php', {
+    axios.post('https://tester001.herokuapp.com/add2.php', {
      
      name: name,
       room_number: roomNumber,

@@ -21,7 +21,7 @@ export default function Roompix() {
 
   const fetchData = () => {
     axios
-      .get('http://localhost/capstone/rooms.php')
+      .get('https://tester001.herokuapp.com/rooms.php')
       .then((response) => {
         setCarouselItems(response.data);
       })

@@ -130,7 +130,7 @@
 //       };
 
 //       try {
-//         await axios.post('http://localhost/capstone/addguestProfile.php', data);
+//         await axios.post('https://tester001.herokuapp.com/addguestProfile.php', data);
 //         setShowModal(true);
 //       } catch (error) {
 //         console.error(error);
@@ -287,7 +287,7 @@ export default function Checkout() {
       };
 
       try {
-        await axios.post('http://localhost/capstone/addguestProfile.php', data);
+        await axios.post('https://tester001.herokuapp.com/addguestProfile.php', data);
         setShowModal(true);
       } catch (error) {
         console.error(error);

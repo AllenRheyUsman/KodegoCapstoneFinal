@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const handleModalSubmit = async () => {
     try {
-      const response = await axios.get('http://localhost/capstone/adminAccount.php', {
+      const response = await axios.get('https://tester001.herokuapp.com/adminAccount.php', {
         params: {
           name: username,
           password: password,

@@ -13,7 +13,7 @@ const RoomDeluxxe = ({ onSuccess }) => {
     event.preventDefault();
 
     axios
-      .post('http://localhost/capstone/addRoomsdeluxxe.php', {
+      .post('https://tester001.herokuapp.com/addRoomsdeluxxe.php', {
         room_number: roomNumber,
         room_price: roomPrice,
         room_ammen: roomAmmen,

@@ -13,7 +13,7 @@
 //   useEffect(() => {
 //     const fetchBookingData = async () => {
 //       try {
-//         const response = await axios.get('http://localhost/capstone/rooms.php');
+//         const response = await axios.get('https://tester001.herokuapp.com/rooms.php');
 //         setBookingData(response.data);
 //       } catch (error) {
 //         console.error('There was an error fetching booking data:', error);
@@ -23,7 +23,7 @@
 
 //     const fetchGuestData = async () => {
 //       try {
-//         const response = await axios.get('http://localhost/capstone/guestProfile.php');
+//         const response = await axios.get('https://tester001.herokuapp.com/guestProfile.php');
 //         setGuestData(response.data);
 //       } catch (error) {
 //         console.error('There was an error fetching guest data:', error);
@@ -119,7 +119,7 @@ export default function CombinedTables() {
   useEffect(() => {
     const fetchBookingData = async () => {
       try {
-        const response = await axios.get('http://localhost/capstone/rooms.php');
+        const response = await axios.get('https://tester001.herokuapp.com/rooms.php');
         setBookingData(response.data);
       } catch (error) {
         console.error('There was an error fetching booking data:', error);
@@ -129,7 +129,7 @@ export default function CombinedTables() {
 
     const fetchGuestData = async () => {
       try {
-        const response = await axios.get('http://localhost/capstone/guestProfile.php');
+        const response = await axios.get('https://tester001.herokuapp.com/guestProfile.php');
         setGuestData(response.data);
       } catch (error) {
         console.error('There was an error fetching guest data:', error);

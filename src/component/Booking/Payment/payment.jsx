@@ -48,7 +48,7 @@ export default function Payment() {
 
     if (isValid) {
       try {
-        const response = await axios.post('http://localhost/capstone/addguestProfile.php', {
+        const response = await axios.post('https://tester001.herokuapp.com/addguestProfile.php', {
           name: name,
           contactNumber: contactNumber,
           email: email,

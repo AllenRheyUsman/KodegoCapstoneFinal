@@ -15,7 +15,7 @@ const Settings = ({ onSuccess }) => {
     event.preventDefault();
 
     axios
-      .post('http://localhost/capstone/addRooms.php', {
+      .post('https://tester001.herokuapp.com/addRooms.php', {
         room_number: roomNumber,
         room_price: roomPrice,
         room_ammen: roomAmmen,

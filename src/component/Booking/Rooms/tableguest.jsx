@@ -7,7 +7,7 @@ export default function TableGuest() {
   const [error, setError] = useState(null);
 
   const refreshData = () => {
-    axios.get('http://localhost/capstone/index4.php')
+    axios.get('https://tester001.herokuapp.com/guestProfile.php')
       .then(response => {
         console.log('Data received:', response.data);
         setData(response.data);
