@@ -28,7 +28,11 @@ export default function Admin() {
 
   return (
     <div className=''>
+      
       <div className="row mx-0 pt-4 px-0 adminhead">
+      <div className="col-2 text-center admindivs ">
+          <Link to="/admin/settings" className="adminlinks">Admin</Link>
+        </div>
         <div className="col-2 text-center admindivs">
           <Link to="/admin/settings" className="adminlinks">Settings</Link>
         </div>
@@ -39,14 +43,12 @@ export default function Admin() {
           <Link to="/admin/complaints" className="adminlinks">Bookings</Link>
         </div>
         <div className="col-2 text-center admindivs">
-          <Link to="/admin/walkin" className="adminlinks">Walk-in</Link>
+          <Link to="/admin/walkin" className="adminlinks">Complaints</Link>
         </div>
         <div className="col-2 text-center admindivs">
-          <Link to="/admin/logout" className="adminlinks">Log-out</Link>
+          <Link to="/" className="adminlinks">Log-out</Link>
         </div>
-        <div className="col-2 text-center admindivs ">
-          <Link to="/" className="adminlinks">Home</Link>
-        </div>
+      
       </div>
       <Outlet />
       {renderPage()}

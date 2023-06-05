@@ -1,8 +1,7 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-
-import React, { useState } from 'react';
-
-const CalendarInterface = () => {
+const CalendarInterface = ({ roomNumber }) => {
   const currentDate = new Date();
   const currentDay = currentDate.getDate();
   const currentMonth = currentDate.getMonth();
@@ -10,6 +9,33 @@ const CalendarInterface = () => {
 
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
   const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+
+  const [bookingData, setBookingData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBookingData = async () => {
+      try {
+        const response = await axios.get('https://tester001.herokuapp.com/guestProfile.php');
+        setBookingData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('There was an error fetching booking data:', error);
+        setError('Error retrieving booking data');
+        setLoading(false);
+      }
+    };
+
+    fetchBookingData();
+  }, []);
+
+  const occupiedDates = bookingData
+    .filter((booking) => booking.roomNumber === roomNumber)
+    .map((booking) => ({
+      checkInDate: new Date(booking.checkInDate).getDate(),
+      checkOutDate: new Date(booking.checkOutDate).getDate(),
+    }));
 
   const [checkInDate, setCheckInDate] = useState('');
   const [checkOutDate, setCheckOutDate] = useState('');
@@ -34,7 +60,9 @@ const CalendarInterface = () => {
           calendarRow.push(<td key={`${row}-${col}`}></td>);
         } else {
           const day = dayCount;
-          const isBetween = day >= Number(checkInDate) && day <= Number(checkOutDate);
+          const isBetween = occupiedDates.some(
+            (booking) => day >= booking.checkInDate && day <= booking.checkOutDate
+          );
 
           calendarRow.push(
             <td key={`${row}-${col}`} style={{ color: isBetween ? 'red' : 'black' }}>
@@ -58,6 +86,14 @@ const CalendarInterface = () => {
     console.log('Check-out Date:', checkOutDate);
   };
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   return (
     <div className="calendar">
       <div className="calendar-header">
@@ -77,7 +113,7 @@ const CalendarInterface = () => {
         </thead>
         <tbody>{renderCalendar()}</tbody>
       </table>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <label htmlFor="checkInDate">Check-in Date:</label>
         <input
           type="number"
@@ -99,7 +135,7 @@ const CalendarInterface = () => {
         />
 
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
     </div>
   );
 };

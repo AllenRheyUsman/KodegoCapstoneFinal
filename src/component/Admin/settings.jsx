@@ -38,6 +38,7 @@ const Settings = ({ onSuccess }) => {
 
   return (
     <div>
+      <h1>Add Rooms Here</h1>
     <Card className="my-4 form text-start formbody">
       <Card.Body>
         <Card.Title>Economy</Card.Title>
