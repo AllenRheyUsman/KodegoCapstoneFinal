@@ -94,7 +94,7 @@ export default function Roompix() {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClosePaymentModal}>
-            Close
+            Close1
           </Button>
         </Modal.Footer>
       </Modal>
