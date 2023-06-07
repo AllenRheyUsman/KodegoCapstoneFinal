@@ -48,7 +48,7 @@ export default function Navbar() {
         <Logo text="Rooms" to="/booking" className="adminlinks"/>
       </div>
       <div className="col-3 mx-0 px-0 pt-3 adminlinks">
-        {isAdmin && <Logo text="Admin" to="/admin" className="adminlinks"/>}
+        {isAdmin && <Logo text="Admin" to="/admin/adminlanding" className="adminlinks"/>}
       </div>
       <div className="col-3 mx-0 px-0 pt-3 adminlinks">
         {!isAdmin && (

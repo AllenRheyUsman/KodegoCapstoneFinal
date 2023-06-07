@@ -5,6 +5,8 @@ import Settings from './settings';
 import Bookings from './bookings';
 import Complaints from './complaints';
 import WalkIn from './walkin';
+import AdminLanding from './adminlanding';
+
 
 
 export default function Admin() {
@@ -12,7 +14,7 @@ export default function Admin() {
 
   const renderPage = () => {
     const currentPath = location.pathname;
-
+  
     if (currentPath === '/admin/settings') {
       return <Settings />;
     } else if (currentPath === '/admin/bookings') {
@@ -21,17 +23,21 @@ export default function Admin() {
       return <Complaints />;
     } else if (currentPath === '/admin/walkin') {
       return <WalkIn />;
+    } else if (currentPath === '/admin/adminlanding') {
+      return <AdminLanding />;
     } else {
       return null;
     }
   };
+  
 
   return (
     <div className=''>
-      
+     
       <div className="row mx-0 pt-4 px-0 adminhead">
       <div className="col-2 text-center admindivs ">
-          <Link to="/admin/settings" className="adminlinks">Admin</Link>
+      <Link to="/admin/adminlanding" className="adminlinks">Admin</Link>
+
         </div>
         <div className="col-2 text-center admindivs">
           <Link to="/admin/settings" className="adminlinks">Settings</Link>
@@ -50,11 +56,11 @@ export default function Admin() {
         </div>
       
       </div>
-      <Outlet />
+    
+    
+      {/* <Outlet /> */}
       {renderPage()}
-      <div>
-   
-      </div>
+
     </div>
   );
 }

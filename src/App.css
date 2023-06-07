@@ -398,3 +398,20 @@
 margin-right: 250px;
 margin-bottom: 50px;
 }
+
+.adminwelcome{
+  animation: welcome 3s ease-in-out ;
+}
+@keyframes welcome {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  };
+}
+.adminlanding{
+  background-color: #4e5153;
+}
